@@ -1,3 +1,57 @@
-body{
-    color: red;
+html {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+    background-color: red;
+    color: black;
+}
+
+button:hover{
+background-color:darkred;
+color:white;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    border: none;
+}
+
+fieldset>label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+}
+
+input, select {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 180px;
+}
+
+input#mailingListCheckbox{
+    width:20px;
+    height: 20px;
 }

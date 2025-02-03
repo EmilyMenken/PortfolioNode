@@ -3,19 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Page title (?) -->
     <title>Guestbook</title>
 
-    <link rel="icon" type="image/png" href="imgs/.png">
-    <link rel="stylesheet" href="/PortfolioNode/public/styles/guestbookStyles.css">
+
+    <!--Favicon  -->
+    <link rel="icon" type="image/jpg" href="/images/guestbookIcon.jpg">
+    
+    <!-- Linked stylesheet -->
+    <link rel="stylesheet" href="/styles/guestbookStyles.css">
     
 </head>
 <body>
     
-<h1> Please sign my guestbook! </h1>>
-<form action = "home" method = "POST">
+    <!-- Page title (?) -->
+<h1> Contact Form </h1>
+<form action = "complete" method = "post">
 
-<label 
+    <fieldset>
 
+    <label> First Name:
+        <input type="text" name="fname">
+    </label>
+    
+    <label> Last Name:
+        <input type="text" name="lname">
+    </label>
+
+    <label> Job Title
+        <input type="text" name="jobTitle">
+    </label>
+
+    <label> Company
+        <input type="text" name="co">
+    </label>
+   
+    <label> LinkedIn URL
+        <input type="text" name="linkedInURL">
+    </label>
+
+    <label> Email Address
+        <input type="text" name="eAddress">
+    </label>
+
+    <!-- Dropdown list -->
+    <label> How did we meet?
+        <select>
+            <option> Please Select... </option>
+            <option>Meetup</option>
+            <option>Job Fair</option>
+            <option>Conference</option>
+            <option>Other</option>
+        </select>
+    </label>
+
+    <label> Other (Please specify)
+        <input type="text" name="other">
+    </label>
+
+    <label> Message
+        <input type="text" name="message">
+    </label>
+
+    
+    <label> Please add me to your mailing list! ↓
+        <input type="checkbox" id="mailingListCheckbox">
+    </label>
+
+    <label> Choose an email format ↓
+        <input type="radio" name="eMailFormat"> HTML
+        <input type="radio" name="eMailFormat"> Text
+
+    </label>
+
+    <button type="button"> Submit </button>
+
+</fieldset>   
 
 
 
