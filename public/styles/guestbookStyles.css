@@ -3,21 +3,42 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    background-image: url(/images/guestbookBackground.jpg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
+    color:#acd5b1;
+
 }
 
 h1 {
     text-align: center;
+
+    background-color: #5f9599;
+    padding:10px;
+
+    color:black;
+}
+
+div{
+    display:flex;
+    justify-content: center;
+    padding:20px;
 }
 
 button {
     border-radius: 5px;
-    background-color: red;
-    color: black;
+    background-color: #5c71f6ed;
+    color: #040678;
 }
 
 button:hover{
-background-color:darkred;
-color:white;
+background-color:#3a6a6f;
+color:#acd5b1;
 }
 
 form {
@@ -49,6 +70,8 @@ input, select {
     font-size: 16px;
     width: 100%;
     max-width: 180px;
+
+    background-color: #5f9599;
 }
 
 input#mailingListCheckbox{
