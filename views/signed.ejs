@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <link rel="stylesheet" href="/styles/guestbookStyles.css">
+</head>
+<body>
+    <h1>Signed! Thank You, <%= sign.fname %>!</h1>
+    <p>We received your signature at <%= sign.timestamp %>.</p>
+
+    <ul>
+    <li> Last Name: <%=sign.lname %> </li>
+    <li> Job Title: <%= sign.jobTitle %> </li>
+    <li> Company: <%= sign.co %> </li>
+    <li> LinkedIn: <%= sign.linkedInURL %> </li>
+    <li> Email: <%= sign.eAddress%> </li>
+    <li> How We Met: <%=sign.weMetAt %> </li>
+    <li> Other: <%= sign.other %></li>
+    <li> Message: <%= sign.message %> </li>
+    <li> Mailing List: <%= sign.mailingList %> </li>
+    <li> Email Format: <%= sign.emailFormat%> </li>
+    </ul>
+
+    <a href="/"><button>Back to original form</button></a>
+</body>
+</html>

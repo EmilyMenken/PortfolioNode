@@ -85,3 +85,19 @@ input#mailingListCheckbox{
     width:20px;
     height: 20px;
 }
+
+ul{
+
+display:flex;
+flex-direction: column;
+align-items: center;
+
+background-color: #5f9599;
+padding: 20px;
+}
+
+p{
+    background-color: #5f9599;
+    padding: 20px;
+
+}

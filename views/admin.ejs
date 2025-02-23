@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/styles/guestbookStyles.css">
+</head>
+<body>
+<h1>All Submissions</h1>
+
+<% if (signatures.length === 0) { %>
+    <p> No submissions yet.</p>
+<% } else { %>
+<ul>
+    <% signatures.forEach(sign => { %>
+    <li>
+    <%= sign.fname %> <%= sign.lname %>, <%= sign.jobTitle %> at <%= sign.co %> 
+    (<%= sign.eAddress %>), <%= sign.timestamp %>
+    </li>
+    <% }) %>
+</ul>
+<% } %>
+
+<a href="/"><button>Back to Form</button></a>
+</body>
+</html>
+
