@@ -101,3 +101,19 @@ p{
     padding: 20px;
 
 }
+/* 
+p#hiddenMessage{
+
+    color: red;
+  font-weight: bold;
+  margin-top: 10px;
+    display: none;
+
+
+}
+
+p#hiddenMessage:invalid{
+
+    display: block;
+
+} */

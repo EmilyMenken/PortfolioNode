@@ -1,4 +1,22 @@
 import express from 'express';
+import mariadb from 'mariadb';
+
+const pool = mariadb.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '795594',
+    database: 'guestBook'
+});
+
+async function connect() {
+    try {
+        const conn = await pool.getConnection();
+        console.log('Connected to the database');
+        return conn;
+    } catch (err) {
+        console.log('Error connecting to the database: ' + err)
+    }
+}
 
 const app = express();
 
@@ -24,7 +42,7 @@ app.get('/signed', (req, res) => {
     res.render(`signed`), { async: true };
 });
 
-app.post('/signed', (req, res) => {
+app.post('/signed', async (req, res) => {
     
     if (!req.body.fname || !req.body.lname || !req.body.eAddress) {
         return res.send('Invalid Input: First Name, Last Name, and Email are required.');
@@ -45,16 +63,48 @@ app.post('/signed', (req, res) => {
         timestamp: new Date().toLocaleString() // Add timestamp to each submission
     };//end sign
 
-    signatures.push(sign);
+    // signatures.push(sign);
 
-    console.log(signatures);
+    // console.log(signatures);
+
+    const conn = await connect();
+ 
+    conn.query(`
+        INSERT INTO signatures (
+            firstName,
+            lastName,
+            email,
+            method,
+            size
+        ) VALUES (
+            '${order.fname}',
+            '${order.lname}',
+            '${order.jobTitle}',
+            '${order.co}',
+            '${order.linkedInURL}',
+            '${order.eAddress}',
+            '${order.weMetAt}',
+            '${order.other}',
+            '${order.message}',
+            '${order.mailingList}',
+            '${order.emailFormat}'
+        );
+    `); //end query
+
 
 //render using ejs
     res.render('signed', { sign });
 });
 
 //render using ejs
-app.get('/admin', (req, res) => {
+app.get('/admin', async (req, res) => {
+
+    const conn = await connect();
+ 
+    const signatures = await conn.query('SELECT * FROM signatures;');
+
+    console.log(signatures);
+
     res.render('admin', { signatures });
 });
 
